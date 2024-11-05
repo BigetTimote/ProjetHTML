@@ -10,32 +10,47 @@
         <link rel="stylesheet" href="perso.css">
     </head>
     <body>
-        <div class="images-container">
-            <img src="https://via.placeholder.com/150" alt="Image 1" onclick="showContent('content1')">
-            <img src="https://via.placeholder.com/150" alt="Image 2" onclick="showContent('content2')">
-            <img src="https://via.placeholder.com/150" alt="Image 3" onclick="showContent('content3')">
-            <img src="https://via.placeholder.com/150" alt="Image 4" onclick="showContent('content4')">
+        <a href="../Accueil/accueil.html"><button class="retour">retour</button></a>
+
+        <div class="groupe1" data-target="div1">
+            <img src="img/luffy.jpg" class="grpsize">
         </div>
-    
-        <div class="content-container">
-            <div id="content1" class="content">
-                <h2>Texte pour Image 1</h2>
-                <p>Voici le contenu qui s'affiche lorsque vous cliquez sur l'image 1.</p>
+
+        
+        <div class="groupe2" data-target="div2">
+            <img src="img/deku.jfif" class="grpsize">
+        </div>
+
+        
+        <div class="groupe3" data-target="div3">
+            <img src="img/guts.jpg" class="grpsize">
+        </div>
+
+        <div class="boxhide" id="div1">
+            <div class="boxgroupe">
+                <div class="text">
+                    <h3>Monkey D. Luffy est le protagoniste charismatique de l'œuvre de One Piece, créée par Eiichiro Oda. Ce jeune pirate intrépide et insouciant se distingue par son chapeau de paille, son sourire éclatant et son rêve audacieux : devenir le Roi des Pirates en trouvant le One Piece, le trésor légendaire laissé par Gol D. Roger. Luffy possède des pouvoirs uniques grâce au fruit du démon Gomu Gomu, qui a transformé son corps en caoutchouc, lui permettant d'étirer ses membres de manière impressionnante. Malgré son apparente naïveté, Luffy est un leader charismatique et un ami fidèle, prêt à affronter les plus grands dangers pour protéger ses compagnons, son équipage des Mugiwara, aussi appelé "l'équipage du Chapeau de Paille". Sa détermination sans faille, son sens de la justice et son esprit libre en font un héros emblématique, capable de rallier des alliés et d'inspirer l'admiration dans tout le monde de One Piece.</h3>
+                </div>
             </div>
-            <div id="content2" class="content">
-                <h2>Texte pour Image 2</h2>
-                <p>Voici le contenu qui s'affiche lorsque vous cliquez sur l'image 2.</p>
+        </div>
+
+        <div class="boxhide" id="div2">
+            <div class="boxgroupe">
+                <div class="text">
+                    <h3>Izuku Midoriya, surnommé Deku, est le protagoniste de My Hero Academia, le manga créé par Kōhei Horikoshi. Dans un monde où la majorité de la population possède des Alters, des super-pouvoirs uniques, Deku est né sans pouvoir, mais il n’a jamais cessé de rêver de devenir un héros comme son idole, All Might, le plus grand héros de tous les temps. Sa vie change radicalement lorsqu’il rencontre All Might, qui, impressionné par le courage et la détermination de Deku, lui transmet son Alter, le One For All, un pouvoir qui décuple sa force et peut être transmis de génération en génération. Avec ce don, Deku intègre le prestigieux lycée Yuei pour héros, où il apprend à maîtriser ce pouvoir immense tout en développant son propre style de combat. Sensible, persévérant et doté d’une grande empathie, Deku est prêt à tout pour protéger ses amis et devenir un véritable symbole d’espoir. Son parcours est marqué par de nombreux défis et apprentissages, mais son rêve de devenir le plus grand des héros le pousse à se surpasser constamment et à se montrer digne de l’héritage d’All Might.</h3>
+                </div>
             </div>
-            <div id="content3" class="content">
-                <h2>Texte pour Image 3</h2>
-                <p>Voici le contenu qui s'affiche lorsque vous cliquez sur l'image 3.</p>
-            </div>
-            <div id="content4" class="content">
-                <h2>Texte pour Image 4</h2>
-                <p>Voici le contenu qui s'affiche lorsque vous cliquez sur l'image 4.</p>
+        </div>
+
+        <div class="boxhide" id="div3">
+            <div class="boxgroupe">
+                
+                <div class="text">
+                    <h3>Guts, le protagoniste de Berserk de Kentaro Miura, est un guerrier solitaire et tourmenté, symbole de résilience dans un monde sombre et violent. Armé de son immense épée, la Dragonslayer, il combat sans relâche les créatures démoniaques et les forces surnaturelles qui le pourchassent nuit après nuit, marqué par une malédiction qui le condamne à une vie de douleur et de combat. Ancien membre des Faucons et trahi par son ami Griffith, Guts nourrit une haine viscérale mais lutte aussi pour préserver son humanité, en dépit de ses blessures physiques et psychologiques. Ses rares alliés, comme Casca et Puck, sont sa seule lumière dans un univers brutal, où chaque bataille est une épreuve de survie. Guts incarne la rage, la persévérance, mais aussi la volonté farouche de résister à la fatalité, même face aux pires horreurs.</h3>
+                </div>
             </div>
         </div>
         
-        <script src="perso.js" async defer></script>
+        <script src="perso.js"></script>
     </body>
 </html>

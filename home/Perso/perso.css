@@ -1,35 +1,157 @@
+
+.retour{
+    background-color: rgb(49, 49, 49);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    pointer-events: auto;
+    text-decoration: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background: url('/home/Perso/img/bkgrnd.webp') no-repeat center center fixed;
+    background: url('img/bkgrnd.webp') no-repeat center center fixed;
     background-size: cover;
     position: relative;
     min-height: 100vh;
 }
 
-.images-container {
+/*
+>--------------------<
+|Placement des images|
+>--------------------<
+*/
+
+.groupe1{
+    border-radius: 10%;
     position: absolute;
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
+    top: 12%;
+    left: 2%;
+    width: 18%;
+    height: 20%;
+    background-color: rgba(49, 49, 49, 0.9);
+
 }
 
-.images-container img {
+.groupe2{
+    border-radius: 10%;
+    position: absolute;
+    top: 42%;
+    left: 2%;
+    width: 18%;
+    height: 20%;
+    background-color: rgba(49, 49, 49, 0.9);
+
+}
+
+.groupe3{
+    border-radius: 10%;
+    position: absolute;
+    top: 72%;
+    left: 2%;
+    width: 18%;
+    height: 20%;
+    background-color: rgba(49, 49, 49, 0.9);
+
+}
+
+.groupe4{
+    border-radius: 10%;
+    position: absolute;
+    top: 12%;
+    right: 2%;
+    width: 18%;
+    height: 20%;
+    background-color: rgba(49, 49, 49, 0.9);
+
+}
+
+.groupe5{
+    border-radius: 10%;
+    position: absolute;
+    top: 42%;
+    right: 2%;
+    width: 18%;
+    height: 20%;
+    background-color: rgba(49, 49, 49, 0.9);
+
+}
+
+.groupe6{
+    border-radius: 10%;
+    position: absolute;
+    top: 72%;
+    right: 2%;
+    width: 18%;
+    height: 20%;
+    background-color: rgba(49, 49, 49, 0.9);
+
+}
+
+.grpsize{
+    border-radius: 10%;
+    position: absolute;
+    height: 100%;
     width: 100%;
-    cursor: pointer;
 }
 
-.content-container {
-    position: absolute;
-    width: 70%;
-    padding: 20px;
-    border-left: 2px solid #ccc;
+.active img {
+    border: 3px solid white; 
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); 
+    border-radius: 10%; 
 }
 
-.content {
+/*
+>--------------------<
+|Paragraphe du groupe|
+>--------------------<
+*/
+
+.boxhide{
     display: none;
 }
 
-.content.active {
-    display: block;
+.boxgroupe{
+    position: absolute;
+    top: 5%;
+    right: 25%;
+    width: 50%;
+    height: 90%;
+    background-color: rgba(49, 49, 49, 0.9);
+    z-index: 1;
+}
+
+.grplogo{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 15%;
+    background-color: rgba(40, 40, 40, 0.8);
+}
+
+.logo{
+    position: absolute;
+    width: auto;
+    height: 150%;
+}
+
+.text{
+    position: absolute;
+    color: white;
+    top: 0%;
+    width: 100%;
+    height: 100%;
 }
