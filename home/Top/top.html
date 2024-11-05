@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Top Animé</title>
+    <style>
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.podium {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    width: 80%;
+    max-width: 900px;
+}
+
+.place {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 150px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.first {
+    background-color: gold;
+    transform: translateY(-20px);
+}
+
+.second {
+    background-color: silver;
+    transform: translateY(-10px);
+}
+
+.third {
+    background-color: #cd7f32;
+}
+
+.place img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover; /* Assure que l'image couvre l'espace sans être déformée */
+}
+
+.place p {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('fond.jpg') no-repeat center center fixed; /* Image de fond */
+    background-size: cover; /* L'image couvre toute la page */
+}
+
+    </style>
+</head>
+<body>
+
+<div class="podium">
+    <div class="place first">
+        <img src="image1.jpg" alt="1ère place">
+        <p>1ère Place</p>
+    </div>
+    <div class="place second">
+        <img src="image2.jpg" alt="2ème place">
+        <p>2ème Place</p>
+    </div>
+    <div class="place third">
+        <img src="image3.jpg" alt="3ème place">
+        <p>3ème Place</p>
+    </div>
+</div>
+
+</body>
+</html>
