@@ -14,9 +14,14 @@
         }
 
         .slides {
-            display: none;
-            text-align: center;
-        }
+    display: none;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    height: 100%; /* Assurez-vous que l'élément prend de la hauteur */
+}
+
 
         .slides img {
             width: 80%;
@@ -25,15 +30,15 @@
         }
 
         .caption {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            padding: 10px;
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
-            
-            text-align: center;
-        }
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    position: relative; /* Utiliser relative pour que ça ne soit pas en dehors du flux normal */
+    width: auto; /* Laisser la largeur automatique */
+    max-width: 800px; /* Limiter à la largeur max de l'image */
+    margin: 0 auto; /* Centre la légende */
+    text-align: center; /* Centre le texte à l'intérieur de la légende */
+}
 
         .nav {
             cursor: pointer;
@@ -54,18 +59,16 @@
         .next {
             right: 0;
         }
-        .image-container {
-    position: relative;
-    display: inline-block;
-    width: 80%; 
-    max-width: 800px; 
-}
-
-.image-container img {
-    width: 100%; 
-    height: auto;
-    border-radius: 10px;
-}
+        .encadre {
+            background-color: black; /* Couleur de fond noire */
+            color: white; /* Couleur du texte en blanc */
+            padding: 20px; /* Espace intérieur de l'encadré */
+            border-radius: 10px; /* Coins arrondis */
+            max-width: 800px; /* Largeur maximale */
+            margin: 20px auto; /* Centre l'encadré horizontalement avec une marge en haut et en bas */
+            text-align: center; /* Centre le texte à l'intérieur de l'encadré */
+        }
+        
     </style>
     
 </head>
@@ -79,9 +82,9 @@
     </div>
 
     <div class="slideshow-container">
+        <div class="image-container">
         <div class="slides">
-            <div class="image-container">
-            <a href="../Top/top.html"><img src="" alt="Photo 1"></a>
+            <a href="../Top/top.html"><img src="top.jpeg" alt="Photo 1"></a>
             <div class="caption">Mon Top Animé</div>
         </div>
         <div class="slides">
@@ -93,11 +96,11 @@
             <div class="caption">Mes recommandations</div>
         </div>
         <div class="slides">
-            <a href="../CV/cv_fr.html"><img src="photo4.jpg" alt="Photo 4"></a>
+            <a href="../CV/cv_fr.html"><img src="CV.jpg" alt="Photo 4"></a>
             <div class="caption">Mon CV</div>
         </div>
         <div class="slides">
-            <a href="../Contact/contact.html"><img src="photo5.jpg" alt="Photo 5"></a>
+            <a href="../Contact/contact.html"><img src="cont.jpg" alt="Photo 5"></a>
             <div class="caption">Me Contacter</div>
         </div>
     </div>
@@ -105,6 +108,13 @@
         <button class="nav prev" onclick="changeSlide(-1)">&#10094;</button>
         <button class="nav next" onclick="changeSlide(1)">&#10095;</button>
     </div>
+    <div class="encadre">
+        <h1>Bienvenue sur mon site !</h1>
+            <p>
+           Sur ce site je vous partage mon univers, celui des Animés ! Ici vous pourrez découvrir plusieurs pages vous présenta
+        </p>
+    </div>
+
 
     <script>
         let slideIndex = 0;
