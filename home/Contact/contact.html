@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="../../css/form.css">
+    <link rel="stylesheet" href="../../css/accueil.css">
+    <script src="script.js" defer></script>
+    
+</head>
+<body>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #3b82f6, #9333ea);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        form {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        .navbar {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+    
+    
+    <div class="navbar">
+        <a href="../Accueil/accueil.html">Accueil</a>
+        <a href="top">Mon Top Animé !</a>
+        <a href="../Perso/perso.html">Mes Personnages préférés</a>
+        <a href="reco">Mes Recommandations</a>
+        <a href="../CV/cv_fr.html">Mon CV</a>
+        <a href="../Contact/contact.html">Me Contacter</a>
+    </div>
+    <!-- modify this form HTML and place wherever you want your form -->
+<form
+action="#"
+method="POST"
+>
+<label>
+  Email:
+  <input type="email" name="email">
+</label>
+<label>
+  Nom:
+  <textarea name="message"></textarea>
+</label>
+<!-- your other form fields go here -->
+<label for="age">Âge :</label>
+      <input type="number" id="age" name="age" min="1" max="120" required placeholder="Votre âge">
+  
+      <label for="gender">Sexe :</label>
+      <select id="gender" name="gender" required>
+          <option value="" disabled selected>Choisissez votre sexe</option>
+          <option value="male">Homme</option>
+          <option value="female">Femme</option>
+          <option value="other">Autre</option>
+      </select>
+  
+      <label for="message">Message :</label>
+      <textarea id="message" name="message" rows="5" required placeholder="Écrivez votre message ici..."></textarea>
+  
+      <button type="submit" class="submit-button">Envoyer le message</button>
+      <div id="confirmation-message" style="display: none; color: whitesmoke;"></div>
+</form>
+<script>
+    document.querySelector('.contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Empêche le formulaire de se soumettre de manière classique
+    
+        const formData = new FormData(this); // Crée un objet FormData avec les données du formulaire
+    
+        // Envoie les données à Formspree
+        fetch("https://formspree.io/f/xldebele", {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json' // Indique que nous voulons une réponse JSON
+            }
+        }).then(response => {
+            if (response.ok) { // Vérifie si la réponse est un succès
+                // Affiche un message de confirmation
+                document.getElementById('confirmation-message').innerText = "Merci pour votre message !";
+                document.getElementById('confirmation-message').style.display = "block"; // Affiche le message
+                this.reset(); // Réinitialise le formulaire
+            } else {
+                // Affiche un message d'erreur si quelque chose ne va pas
+                document.getElementById('confirmation-message').innerText = "Désolé, une erreur est survenue. Veuillez réessayer.";
+                document.getElementById('confirmation-message').style.display = "block"; // Affiche le message
+            }
+        }).catch(error => {
+            // Si une erreur se produit lors de l'envoi
+            document.getElementById('confirmation-message').innerText = "Désolé, une erreur est survenue. Veuillez réessayer.";
+            document.getElementById('confirmation-message').style.display = "block"; // Affiche le message
+        });
+    });
+    </script>
+</body>
+</html>
