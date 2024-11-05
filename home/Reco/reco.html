@@ -3,101 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site avec Images et Étoiles</title>
-    <style>
-        .container {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-        }
-        .slider {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        .slider::-webkit-scrollbar {
-            display: none;
-        }
-        .image-block {
-            flex: 0 0 auto;
-            width: 300px;
-            margin: 20px;
-            text-align: center;
-        }
-        .stars {
-            color: gold;
-            font-size: 24px;
-        }
-        .arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            z-index: 1;
-        }
-        .arrow-left {
-            left: 10px;
-        }
-        .arrow-right {
-            right: 10px;
-        }
-    </style>
+    <title>Galerie d'Images avec Texte</title>
+    <link rel="stylesheet" href="../../css/accueil.css">
+    <link rel="stylesheet" href="reco.css">
 </head>
 <body>
-    <div class="container">
-        <button class="arrow arrow-left" onclick="moveSlide(-1)">&#8249;</button>
-        <div class="slider" id="slider">
-            <!-- Première image -->
-            <div class="image-block">
-                <img src="img/dn.avif" alt="Image 1">
-                <div class="stars">
-                    &#9733; &#9733; &#9733; &#9733; &#9733;
-                </div>
-                <p>Voici la description de l'image 1</p>
-            </div>
-
-            <!-- Deuxième image -->
-            <div class="image-block">
-                <img src="img/ds.avif" alt="Image 2">
-                <div class="stars">
-                    &#9733; &#9733; &#9733; &#9733; &#9733;
-                </div>
-                <p>Voici la description de l'image 2</p>
-            </div>
-
-            <!-- Troisième image -->
-            <div class="image-block">
-                <img src="img/opm.webp" alt="Image 3">
-                <div class="stars">
-                    &#9733; &#9733; &#9733; &#9733; &#9733;
-                </div>
-                <p>Voici la description de l'image 3</p>
-            </div>
-        </div>
-        <button class="arrow arrow-right" onclick="moveSlide(1)">&#8250;</button>
+    <div class="navbar">
+        <a href="top">Mon Top Animé !</a>
+        <a href="../Perso/perso.html">Mes Personnages préférés</a>
+        <a href="../Reco/reco.html">Mes Recommandations</a>
+        <a href="../CV/cv_fr.html">Mon CV</a>
+        <a href="../Contact/contact.html">Me Contacter</a>
     </div>
 
-    <script>
-        let currentIndex = 0;
 
-        function moveSlide(direction) {
-            const slider = document.getElementById('slider');
-            const totalImages = slider.children.length;
-            const imageWidth = slider.children[0].offsetWidth + 40; // image width + margin
 
-            currentIndex += direction;
 
-            if (currentIndex < 0) {
-                currentIndex = 0;
-            } else if (currentIndex >= totalImages) {
-                currentIndex = totalImages - 1;
-            }
 
-            slider.style.transform = `translateX(${-currentIndex * imageWidth}px)`;
-        }
-    </script>
+    <div class="carousel">
+        <div class="arrow" onclick="previousImage()">&#8592;</div>
+        <div class="content">
+            <div id="image-container">
+                <img id="current-image" src="img/dn.avif" alt="Image 1">
+                <div class="stars">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+        </div>
+        <div class="text-area" id="text-container">
+            <p id="current-text">défillez</p>
+        </div>
+        <div class="arrow" onclick="nextImage()">&#8594;</div>
+    </div>
+
+    <script src="reco.js"></script>
 </body>
 </html>

@@ -6,6 +6,67 @@
     <title>Accueil</title>
     <link rel="stylesheet" href="../../css/accueil.css">
     <script src="script.js" defer></script>
+    <style>
+        .slideshow-container {
+            width: 80%;
+            margin: auto;
+            position: relative;
+        }
+
+        .slides {
+            display: none;
+            text-align: center;
+        }
+
+        .slides img {
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+        }
+
+        .caption {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 10px;
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            
+            text-align: center;
+        }
+
+        .nav {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            background-color: rgba(0,0,0,0.5);
+            border: none;
+            border-radius: 3px;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+        .image-container {
+    position: relative;
+    display: inline-block;
+    width: 80%; 
+    max-width: 800px; 
+}
+
+.image-container img {
+    width: 100%; 
+    height: auto;
+    border-radius: 10px;
+}
+    </style>
     
 </head>
 <body>
@@ -17,10 +78,60 @@
         <a href="../Contact/contact.html">Me Contacter</a>
     </div>
 
-    <div class="content">
-        <h1>Bienvenue sur notre site !</h1>
-        <p>Ceci est la page d'accueil de votre site. Vous pouvez naviguer entre les différentes catégories à l'aide de la barre de navigation située à droite.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel vehicula libero, non auctor erat. Vivamus sagittis risus eu nunc sollicitudin tristique. Praesent vitae orci quis justo bibendum malesuada.</p>
+    <div class="slideshow-container">
+        <div class="slides">
+            <div class="image-container">
+            <a href="../Top/top.html"><img src="" alt="Photo 1"></a>
+            <div class="caption">Mon Top Animé</div>
+        </div>
+        <div class="slides">
+            <a href="../Perso/perso.html"><img src="perso.jpg" alt="Photo 2"></a>
+            <div class="caption">Mes personnages préférés</div>
+        </div>
+        <div class="slides">
+            <a href="../Reco/reco.html"><img src="reco.jpg" alt="Photo 3"></a>
+            <div class="caption">Mes recommandations</div>
+        </div>
+        <div class="slides">
+            <a href="../CV/cv_fr.html"><img src="photo4.jpg" alt="Photo 4"></a>
+            <div class="caption">Mon CV</div>
+        </div>
+        <div class="slides">
+            <a href="../Contact/contact.html"><img src="photo5.jpg" alt="Photo 5"></a>
+            <div class="caption">Me Contacter</div>
+        </div>
     </div>
+
+        <button class="nav prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="nav next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("slides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        function changeSlide(n) {
+            let slides = document.getElementsByClassName("slides");
+            slideIndex += n;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            if (slideIndex < 1) { slideIndex = slides.length; }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+    </script>
 </body>
 </html>

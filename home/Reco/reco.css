@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('img/bckgrnd.webp') no-repeat center center fixed;
+}
+.carousel {
+    display: flex;
+    align-items: center;
+    background: rgba(161, 161, 161, 0.5);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.carousel img {
+    max-width: 200px;
+    border-radius: 10px;
+}
+.text-area {
+    max-width: 500px;
+    margin-left: 20px;
+}
+.stars {
+    margin-top: 10px;
+}
+.stars span {
+    color: gold;
+    font-size: 20px;
+}
+.arrow {
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+}
