@@ -10,7 +10,31 @@
         <link rel="stylesheet" href="perso.css">
     </head>
     <body>
-
+        <div class="images-container">
+            <img src="https://via.placeholder.com/150" alt="Image 1" onclick="showContent('content1')">
+            <img src="https://via.placeholder.com/150" alt="Image 2" onclick="showContent('content2')">
+            <img src="https://via.placeholder.com/150" alt="Image 3" onclick="showContent('content3')">
+            <img src="https://via.placeholder.com/150" alt="Image 4" onclick="showContent('content4')">
+        </div>
+    
+        <div class="content-container">
+            <div id="content1" class="content">
+                <h2>Texte pour Image 1</h2>
+                <p>Voici le contenu qui s'affiche lorsque vous cliquez sur l'image 1.</p>
+            </div>
+            <div id="content2" class="content">
+                <h2>Texte pour Image 2</h2>
+                <p>Voici le contenu qui s'affiche lorsque vous cliquez sur l'image 2.</p>
+            </div>
+            <div id="content3" class="content">
+                <h2>Texte pour Image 3</h2>
+                <p>Voici le contenu qui s'affiche lorsque vous cliquez sur l'image 3.</p>
+            </div>
+            <div id="content4" class="content">
+                <h2>Texte pour Image 4</h2>
+                <p>Voici le contenu qui s'affiche lorsque vous cliquez sur l'image 4.</p>
+            </div>
+        </div>
         
         <script src="perso.js" async defer></script>
     </body>
