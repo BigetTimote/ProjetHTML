@@ -35,6 +35,7 @@
     </div>
    <!--Form de contact--> 
 <form
+id="contact-form"
 action="#"
 method="POST"
 >
@@ -66,33 +67,33 @@ method="POST"
 </form>
 <!--Javascript pour empecher l'ouverture de formspree a l'envoi du formulaire-->
 <script>
-    document.querySelector('.contact-form').addEventListener('submit', function(event) {
-        event.preventDefault(); 
+    document.querySelector('#contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Empêche le formulaire de se soumettre de manière classique
     
-        const formData = new FormData(this); 
+        const formData = new FormData(this); // Crée un objet FormData avec les données du formulaire
     
-        
+        // Envoie les données à Formspree
         fetch("https://formspree.io/f/xldebele", {
             method: 'POST',
             body: formData,
             headers: {
-                'Accept': 'application/json' 
+                'Accept': 'application/json' // Indique que nous voulons une réponse JSON
             }
         }).then(response => {
-            if (response.ok) { 
-                
+            if (response.ok) { // Vérifie si la réponse est un succès
+                // Affiche un message de confirmation
                 document.getElementById('confirmation-message').innerText = "Merci pour votre message !";
-                document.getElementById('confirmation-message').style.display = "block"; 
-                this.reset(); 
+                document.getElementById('confirmation-message').style.display = "block"; // Affiche le message
+                this.reset(); // Réinitialise le formulaire
             } else {
-                
+                // Affiche un message d'erreur si quelque chose ne va pas
                 document.getElementById('confirmation-message').innerText = "Désolé, une erreur est survenue. Veuillez réessayer.";
-                document.getElementById('confirmation-message').style.display = "block"; 
+                document.getElementById('confirmation-message').style.display = "block"; // Affiche le message
             }
         }).catch(error => {
-            
+            // Si une erreur se produit lors de l'envoi
             document.getElementById('confirmation-message').innerText = "Désolé, une erreur est survenue. Veuillez réessayer.";
-            document.getElementById('confirmation-message').style.display = "block"; 
+            document.getElementById('confirmation-message').style.display = "block"; // Affiche le message
         });
     });
     </script>
